@@ -1,0 +1,46 @@
+第一步：下载和安装 FreeTds
+cd / 
+wget ftp://ftp.freetds.org/pub/freetds/stable/freetds-1.00.tar.gz 
+tar -zxvf freetds-1.00.tar.gz 
+cd freetds-1.00 
+./configure --prefix=/usr/local/freetds 
+gmake 
+gmake install 
+
+
+第二步： 编译PHP的mssql扩展并加上freetds路径
+cd / 
+wget http://cn2.php.net/distributions/php-5.6.21.tar.gz 
+tar -zxvf php-5.6.21.tar.gz 
+cd /php-5.6.21/ext/mssql 
+/alidata/server/php/bin/phpize
+./configure --with-php-config=/alidata/server/php/bin/php-config --with-mssql=/usr/local/freetds 
+make && make install 
+
+
+第三步：查找mssql.so
+cd / 
+find -name 'mssql.so'
+./alidata/server/php-5.5.7/lib/php/extensions/no-debug-non-zts-20121212/mssql.so
+
+
+第四步：加载模块到php
+vi /usr/local/php5/lib/php.ini
+添加如下行：
+extension = "/alidata/server/php-5.5.7/lib/php/extensions/no-debug-non-zts-20121212/mssql.so"
+
+
+第五步：重启apache
+如果当前用户的apache已经安装为linux的服务的话，可以使用以下命令进行以上操作。
+1. 启动apache
+service httpd start 
+2. 停止服务apache
+service httpd stop 
+3. 重新启动apache
+service httpd restart
+
+
+第六步：
+注: 如果编译php加载freetds 时候出现不能找到freetds目录,则需要以下操作(官方的Faq)
+touch /usr/local/freetds/include/tds.h
+touch /usr/local/freetds/lib/libtds.a

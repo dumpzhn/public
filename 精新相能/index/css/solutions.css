@@ -1,0 +1,32 @@
+a:hover{
+    text-decoration: none;
+}
+.jsyy .box-c{
+    border:1px solid #ccc;
+    text-align: center;
+}
+.line-big1 {
+    margin: 10px auto 26px;
+    border-width: 2px;
+    width: 80px;
+}
+.jsyy .box-c ul {
+    min-height:250px;
+}
+.jsyy .box-c ul li{
+    margin-bottom:20px;
+}
+div#jjfj {
+    background-image: url(../img/1.jpg);background-position: center 0;
+    background-repeat: no-repeat;
+
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+
+}
+.honor .title{
+    padding:20px;
+}

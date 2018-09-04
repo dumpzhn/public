@@ -1,0 +1,152 @@
+
+字段名 必传的
+
+	merber_id:20171001   客户账户  
+		
+	wdqj[0]:15℃~25℃   温度区间		
+
+	bchj[0]:阴凉	保存环境
+
+	cargoname[0]:22 货物名称
+
+         bcnum[0][38]:3  所属容积及数量
+
+	iswdj[0]:1  是否使用温度计  1使用  0不使用
+
+	wdjtype[]:U盘温度计  温度计名称
+	
+	wdjnum[]:3  温度计数量
+	
+	note[0]:sad 备注  （可传可不传）
+
+	addresser:w  发货人名字
+
+	addresserphone:1 发货人联系电话
+
+	fjgongsi:w  发货人公司
+	
+	fjbumen:w  发货人部门科室
+ 
+	addresserdizhi:w  发货地址
+
+	shouname:e  收货人名字
+
+	shoutelephone:2 收货人联系电话
+	
+	shougongsi:e   收货公司
+
+	shoubumen:e  收货部门科室
+
+	shouadderss:e 收货地址
+
+	requiretaketime:2018-05-10 13:13  上门取件时间
+
+	limittime:24H 要求送达时间
+
+	isinsure:1 是否投保  1投保  0不投保
+
+	cargovalue:55  投保金额
+
+	格式打印  
+	{
+		
+		addresser
+		:
+		"w"
+		addresserdizhi
+		:
+		"w"
+		addresserphone
+		:
+		"w"
+		bchj[0]
+		:
+		"阴凉"
+		bcnum
+		:
+		Array(1)
+		0
+		:
+		{38: "4"}
+		length
+		:
+		1
+		__proto__
+		:
+		Array(0)
+		cargoname[0]
+		:
+		"3"
+		cargovalue
+		:
+		"e"
+		fjbumen
+		:
+		"w"
+		fjgongsi
+		:
+		"w"
+		isinsure
+		:
+		1
+		iswdj[0]
+		:
+		1
+		limittime
+		:
+		"36H"
+		merber_id
+		:
+		"20171001"	
+		note[0]
+		:
+		""
+		requiretaketime	
+		:
+		"2018-05-10 13:27"
+		shouadderss
+		:
+		"e"
+		shoubumen
+		:
+		"e"
+		shougongsi
+		:
+		"e"
+		shouname
+		:
+		"e"
+		shoutelephone
+		:
+		"e"
+		wdjnum
+		:
+		Array(1)
+		0
+		:
+		"3"
+		length
+		:
+		1
+		__proto__
+		:
+		Array(0)
+		wdjtype
+		:
+		Array(1)
+		0
+		:
+		"TP温度计"
+		length
+		:
+		1
+		__proto__
+		:
+		Array(0)
+		wdqj[0]
+		:
+		"15℃~25℃"
+	}
+		
+
+

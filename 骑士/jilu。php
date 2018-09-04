@@ -1,0 +1,48 @@
+InSert Into Sends (BillNumber,AccountNumber,StartDepart,StartCity,NetDepart,NetCity,NetCompany,EndDepart,EndCity,CargoName（货物名字）,Jian（箱子总数）,AWeight（实际重量）,VWeight（体积重量）,CWeight（计费重量）,Volume（体积）,WDQJ,PackageName,Jian1,"
+            If IntK = 2 Then
+                InSql = InSql & "PackageName0,Jian0,"
+            End If
+            If IntK = 3 Then
+                InSql = InSql & "PackageName0,Jian0,PackageName1,Jian2,"
+            End If
+            If PayMoney <> 0 Then
+                If IsDF = False Then
+                    InSql = InSql & "PayMoney,YunFei,IsInCome,InComeTime,InComeName,"
+                Else
+                    InSql = InSql & "DFPay,IsDF,YunFei,IsInCome,InComeTime,InComeName,"
+                End If
+            End If
+            If StrSafeItem = "投保" Then
+                InSql = InSql & "IsSafe,SafeItem,"
+                If SafePay > 0 Then
+                    InSql = InSql & "SafeMoney,"
+                End If
+            Else
+                InSql = InSql & "SafeItem,"
+            End If
+            InSql = InSql & "CargoSize（货物尺寸）,SendsName（发件人姓名）,SendsTelephone,SendsCompany,SendsAddress,SendsArea,SendsRoule,LimitTime,GetName,GetTelephone,GetCompany,GetAddress,GetArea,GetRoule,WTNO（委托书id  sendstmp表的主键）,WTNO1（温度计是否是用  使用  不使用）,EntryName（录入人）,TakeTime（回复当前时间）,PostNumber（项目编号xmno）,ContractNumber（客户卡号khno）,Attention（备注）,InCity（包装 40L 1+130L 2）,PayWay（月结或者现金）) Values
+
+
+
+
+
+
+
+
+
+sql = "Select T_Low,T_Hight FROM A_00_03 WHERE WDQJ='" & SendsTable.Rows(0).Item("WDQJ") & "'"
+                            ATable.Clear()
+                            ADapter = New SqlDataAdapter(sql, cnn)
+                            ADapter.Fill(ATable)
+                            If ATable.Rows.Count > 0 Then
+                                StrT_Low = ATable.Rows(0).Item("T_Low")
+                                StrT_Hight = ATable.Rows(0).Item("T_Hight")
+                                Dim Url As String = "http://www.ccsc58.com/json/17_00_PutData_Tms_PickTime.php"
+                                Dim StrData As String = "admin_permit=3d66cee22eb39927242348df53c21a9e& WaybillNumber="单号"&SheBeiBianHao="温度计编号"&T_low=" & StrT_Low & "&T_hign=" & StrT_Hight & "&PickTime="取件时间"&StartAddress=" 始发城市 "&EndAddress="目的城市 "&Tel="custmer表里面的先判断itemcode是否有值  没有则传saletelephone  通过客户账号 "&Company="操作网络
+                                Dim strMsg As String = GetData(Url, StrData)
+                                If InStr(strMsg, "success") <> 0 Then
+                                Else
+                                    'MsgBox("温度计匹配错误！")
+                                    'Exit Sub
+                                End If
+                            End If            

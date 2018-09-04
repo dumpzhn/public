@@ -1,0 +1,19 @@
+PHP运行环境（CentOS7.3 64位 |
+ Apache |
+ PHP5.4）
+
+公网IP： 112.126.85.204(公)
+
+用户名： root 
+密码：ZjzlSS24680@$^)3b4#!oppp3!@
+
+
+公网ip  120.55.186.125
+用户名  root
+密码    ZjzlEaf324
+
+顺义网站
+域名：www.cccc58.com  ip:59.110.61.154
+用户名：Administrator
+
+连接密码：ZjzlA1!2@3#4$5%6^7&8*9(0)QS

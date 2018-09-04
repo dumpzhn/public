@@ -1,0 +1,62 @@
+如何搭建自己的git服务器源
+  
+        1. 使用ssh连接上自己的云服务器，然后创建一个裸仓库 
+
+           git init --bare  git名（wexin).git
+ 
+        2. 创建用户 
+           
+           useradd weixin 
+           echo 123456 | passwd --stdin weixin
+
+           chown -R weixin:weixin ar/www/weixin.git
+
+        3. 到本地客户端clone 
+           git clone weixin@106.14.201.81:ar/www/weixin.git
+
+        到这一步基本就可以了，但是不安全，因为weixin这个用户可以直接使用ssh登录
+
+ 
+
+       4. 到你本机clone的目录下去设置下git的全局账号
+           git config --global user.name  ‘xqhero’
+           git config --global user.email ‘476837464@qq.com’
+
+       5. 在本地客户端使用ssh生成公钥和私钥
+           ssh-keygen -t rsa -C "476837464@qq.com 
+
+"
+
+        6. 到服务器上修改sshd的配置文件，开启rsa认证
+
+           vim  /etc/ssh/sshd_config
+
+           RSAAuthentication yes
+	   PubkeyAuthentication yes
+           AuthorizedKeysFile      .ssh/authorized_keys
+
+        7. 到服务器weixin这个账号的家目录下创建.ssh的文件夹，在其中创建authorized_keys
+
+           cd /home/weixin
+           mkdir .ssh
+           cd .ssh ; touch authorized_keys
+
+         8. 给权限
+
+           chown -R weixin:weixin .ssh
+
+         9. 复制客户端.ssh/id_rsa.pub中的内容到authorized_keys这个文件中
+
+            ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuXuEE6gA5zJquOFDY4WiCEWvApU4b57K+V6KSATa2SYc/rcGd0O1z37TKWsDrVVdvD4q2TLj4pws/s8qcAccOQAfS/Ndn0Wj6O2Fp4t2hwdBnsQOOne713h+I/cYKqXSGnKnhCcEdsPIgna6gJmFBsG3bqgSrJNH/OMfCFQoWhY0LhYUsd0ntd++1ZAsW5tcOZrn3zYx6Gsv46yCRKH3A6jm8yRGJg23sbw2MgWk6YLMTeq+yBlniR8lUmQDFx9s6Ex7ZV45ah9JPhJFgy3vZtFVVt2nCOu/g+dvC6zmSf74vkdGO30fUXtbGBEMet50Nr0Y5yUFSdom7CQvAqZUKw== 476837464@qq.com
+
+         10. 修改vim /etc/passwd这个文件中weixin用户的登录脚本
+          /bin/git-shell
+
+         weixin:x:1001:1001::/home/weixin:/bin/git-shell
+
+         11. 测试即可实现无密码登录而且weixin用户不能直接使用ssh进行远程连接，但可以推送git内容
+	cd /git裸库下的hooks目录
+        mv post-update.sample post-update
+        unset GIT_INDEX_FILE
+        git --work-tree=/var/www/lsh --git-dir=/var/www/lsh.git checkout -f
+       

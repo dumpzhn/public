@@ -1,0 +1,165 @@
+/*//调中屏幕的样式*/
+
+
+
+
+.decoration:after {
+    bottom: 0;
+}
+.decoration{
+    border-right: 1px solid #ccc;
+    width: 10px;
+    height: 50px;
+    position: relative;
+    right: -8px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .decoration{
+
+    }
+}
+.wzjl  li{
+    padding: 10px 0px;
+}
+.news-circle {
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    vertical-align: middle;
+}
+.decoration1 {
+    display: table-cell;
+    width: 10%;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    padding-bottom: 50px;
+}
+.news-circle {
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    vertical-align: middle;
+}
+.decoration1:after {
+    bottom: 0;
+}
+.decoration1:before, .decoration1:after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 50%;
+    background: #ccc;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+}
+.news-item:hover .solid-circle {
+    background: #64b7f7;
+}
+.solid-circle {
+    background: #ccc;
+    border-radius: 50%;
+    width: 0.6rem;
+    height: 0.6rem;
+    overflow: hidden;
+    margin: 0.3rem;
+}
+.productsss{
+    position: absolute;right: 0;top: 0;
+    color: #000000;
+}
+
+a {
+
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms;
+}
+a:hover,a:focus,.asdf{
+    color:orangered;
+    text-decoration: none;
+    outline: none;
+}
+
+
+
+
+ol li {
+    list-style: none;
+}
+.img-slider {
+    width: 500px;
+    height: 200px;
+    background-color: #fff;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-slider ul li {
+    width: 500px;
+    height: 200px;
+    float: left;
+}
+
+.img-slider a {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 50px;
+    height: 50px;
+
+    margin-top: -25px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    display: none;
+}
+
+.img-slider a.next {
+    left: auto;
+    right: -32px;
+}
+
+.img-slider:hover a {
+    display: block;
+}
+
+.img-slider ol {
+    width: 104px;
+    height: 15px;
+    background-color: red;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -48px;
+    padding: 2px 1px;
+    border-radius: 7px;
+}
+
+.img-slider ol li {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    float: left;
+    margin: 0 3px;
+    border-radius: 5px;
+}
+
+.img-slider ol li.active {
+    background-color: green;
+}
+#qywh p{
+    font-size: 20px;
+    font-weight: 800
+}
+#gsjsss div{
+    font-size: 16px;
+    font-weight:700;
+}

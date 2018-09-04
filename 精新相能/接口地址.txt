@@ -1,0 +1,32 @@
+前端：
+首页展示接口 http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/
+
+关于我们接口 http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/index.php/index/company/index
+
+信息详细接口 http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/index.php/index/message/index
+
+保温箱接口   http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/index.php/index/product/bwx
+
+温度计接口   http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/index.php/index/product/wdj
+
+冰板接口   http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/index.php/index/product/bb
+
+云平台接口   http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/index.php/index/product/ypt
+
+更多信息接口 http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/index.php/index/article/index
+（点击更多的时候 只需要传type即可  分页跳转的时候传页码page跟种类type）
+
+精新商学院接口  http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/index.php/index/school/index
+
+技术应用接口 http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/index.php/index/applocation/index
+（只需要传type 包括光热节能  无源冷链  恒温服饰  节能建材即可  分页跳转的时候传页码page跟种类type）
+
+技术应用详情接口  http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/index.php/index/appmessage/index
+（type与id都要传）
+
+应用解决方案  http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/index.php/index/solution/index
+
+招聘信息接口  http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/index.php/index/recruit/index
+（传id就好）
+后端：
+登录接口 http://out.ccsc58.cc/DATA_PORT_JINGXINXIANGNENG_1.01/jxxn/public/index.php/admin/login/index
